@@ -31,8 +31,9 @@ export function Header() {
   return (
     <>
       <header>
-        <div className="max-w-7xl h-22.25 bg-background mx-auto flex justify-between items-center px-5">
+        <div className="max-w-7xl h-16 sm:h-22.25 bg-background mx-auto flex justify-between items-center px-5">
           <Image
+            className="aspect-125/45 w-20 sm:w-31.25"
             src={"./images/logo/google.svg"}
             alt="google"
             width={125}
@@ -52,7 +53,10 @@ export function Header() {
             ))}
           </ul>
           <div className="flex items-center gap-x-4">
-            <ButtonPrimary label="Schedule A Meeting" />
+            <ButtonPrimary
+              className="hidden sm:flex"
+              label="Schedule A Meeting"
+            />
             <button
               className="lg:hidden p-2 -mr-2 rounded-md transition-colors"
               onClick={() => setMenuOpen((o) => !o)}
@@ -73,20 +77,13 @@ export function Header() {
               Find all the navigation links in the mobile menu.
             </SheetDescription>
           </SheetHeader>
-          <div className="flex items-center justify-between px-6 h-22.25 border-b border-border shrink-0">
+          <div className="px-6 h-22.25 border-b border-border flex items-center">
             <Image
               src={"./images/logo/google.svg"}
               alt="google"
               width={100}
               height={36}
             />
-            <button
-              className="p-2 -mr-2 rounded-md text-foreground hover:bg-accent transition-colors"
-              onClick={() => setMenuOpen(false)}
-              aria-label="Close menu"
-            >
-              <X size={22} />
-            </button>
           </div>
 
           {/* Nav links */}
