@@ -50,6 +50,8 @@
 
   /* max width */
   /* --container-7xl: 1240px; */
+
+  --breakpoint-xs: 25rem;
 }
 
 :root {
