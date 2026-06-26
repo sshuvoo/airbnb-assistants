@@ -14,7 +14,7 @@ export function HowItWorksSection() {
   return (
     <section>
       <SectionHeader
-        className="mt-16.75"
+        className="pt-16.75"
         title={{ plain: 'Getting Started is', accent: 'Easy' }}
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
       />

@@ -1,152 +1,103 @@
-// components/PricingCard.tsx
-import type { BillingCycle, PricingTier } from "@/types/pricing";
-import Link from "next/link";
+import type { BillingCycle, PricingTier } from '@/types/pricing'
 
-interface PricingCardProps {
-  tier: PricingTier;
-  cycle: BillingCycle;
-}
+export function PricingCard({
+  tier,
+  cycle,
+}: {
+  tier: PricingTier
+  cycle: BillingCycle
+}) {
+  const { highlighted } = tier
 
-function CheckIcon({ highlighted }: { highlighted: boolean }) {
-  return (
-    <span
-      className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full ${
-        highlighted ? "bg-white/20" : "bg-primary/10"
-      }`}
-    >
-      <svg
-        className={`h-3.5 w-3.5 ${highlighted ? "text-white" : "text-primary"}`}
-        viewBox="0 0 14 14"
-        fill="none"
-        aria-hidden="true"
-      >
-        <path
-          d="M2.5 7L5.5 10L11.5 4"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    </span>
-  );
-}
-
-function CrossIcon() {
-  return (
-    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gray-100">
-      <svg
-        className="h-3.5 w-3.5 text-gray-400"
-        viewBox="0 0 14 14"
-        fill="none"
-        aria-hidden="true"
-      >
-        <path
-          d="M4 4L10 10M10 4L4 10"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
-      </svg>
-    </span>
-  );
-}
-
-export default function PricingCard({ tier, cycle }: PricingCardProps) {
-  const { highlighted } = tier;
-
-  // Derive display price
-  const isYearly = cycle === "yearly";
-  const monthlyEquivalent =
-    isYearly && tier.price.yearly > 0
-      ? Math.round(tier.price.yearly / 12)
-      : tier.price.monthly;
-
-  const displayAmount = tier.price.monthly === 0 ? 0 : monthlyEquivalent;
+  const isYearly = cycle === 'yearly'
 
   return (
     <div
-      className={`relative flex flex-col rounded-2xl p-8 ${
-        highlighted
-          ? "bg-primary text-white shadow-2xl shadow-primary/30 scale-[1.02] z-10"
-          : "bg-white text-gray-900 border border-gray-100 shadow-sm"
-      }`}
+      className={`font-manrope w-full rounded-[10px] border px-6 py-10 lg:w-94.75 ${highlighted ? 'bg-primary border-transparent' : 'border-[#FAC4D2] bg-white'}`}
     >
-      {/* Header */}
-      <div className="mb-6">
+      <div className="">
         <h3
-          className={`text-xl font-bold mb-2 ${
-            highlighted ? "text-white" : "text-gray-900"
-          }`}
+          className={`font-manrope text-[22px] leading-[130%] font-bold ${highlighted ? 'text-white' : 'text-[#191D23]'}`}
         >
           {tier.name}
         </h3>
         <p
-          className={`text-sm leading-relaxed ${
-            highlighted ? "text-white/75" : "text-gray-500"
-          }`}
+          className={`text-normal font-manrope mt-2.75 text-[16px] leading-[130%] ${highlighted ? 'text-[#F7F8F9]' : 'text-[#64748B]'}`}
         >
           {tier.description}
         </p>
       </div>
 
-      {/* Price */}
-      <div className="mb-6 flex items-end gap-1">
+      <div className="mt-5 mb-6 flex items-center gap-x-2">
         <span
-          className={`text-5xl font-extrabold tracking-tight ${
-            highlighted ? "text-white" : "text-gray-900"
+          className={`font-manrope text-[56px] leading-[130%] font-semibold ${
+            highlighted ? 'text-white' : 'text-[#191D23]'
           }`}
         >
-          ${displayAmount}
+          ${isYearly ? tier.price.yearly : tier.price.monthly}
         </span>
         <span
-          className={`mb-1.5 text-sm ${
-            highlighted ? "text-white/70" : "text-gray-400"
+          className={`font-manrope text-[16px] leading-[130%] font-light ${
+            highlighted ? 'text-[#F7F8F9]' : 'text-[#4B5768]'
           }`}
         >
-          {isYearly && tier.price.yearly > 0
-            ? "/ mo, billed yearly"
-            : "/ Month"}
+          {isYearly && tier.price.yearly > 0 ? '/ Year' : '/ Month'}
         </span>
       </div>
 
-      {/* CTA */}
-      <Link
-        href={tier.cta.href}
-        className={`mb-8 block w-full rounded-lg py-3 text-center text-sm font-semibold transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ${
-          highlighted
-            ? "bg-white text-primary hover:bg-white/90 focus-visible:outline-white"
-            : "border border-primary text-primary hover:bg-primary hover:text-white focus-visible:outline-primary"
-        }`}
+      <button
+        className={`border-primary font-manrope text-primary h-11 w-full rounded-[4px] border-[1.5px] text-[16px] leading-[130%] font-semibold ${highlighted ? 'border-transparent bg-white' : ''}`}
       >
-        {tier.cta.label}
-      </Link>
+        Get Started Now
+      </button>
 
-      {/* Divider */}
-      <div
-        className={`mb-6 h-px w-full ${
-          highlighted ? "bg-white/20" : "bg-gray-100"
-        }`}
-      />
-
-      {/* Features */}
-      <ul className="flex flex-col gap-3.5">
+      <ul className="mt-10 space-y-3">
         {tier.features.map((feature) => (
-          <li key={feature.label} className="flex items-center gap-3">
+          <li key={feature.label} className="grid grid-cols-[auto_1fr] gap-3">
             {feature.included ? (
-              <CheckIcon highlighted={highlighted} />
+              <span className="flex size-8 items-center justify-center rounded-full bg-[#FAC4D2]">
+                <svg
+                  width="12"
+                  height="9"
+                  viewBox="0 0 12 9"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M11.8162 0.207014C12.0701 0.473695 12.0597 0.895677 11.793 1.14954L4.08929 8.48287C3.95774 8.6081 3.78078 8.67424 3.59933 8.66598C3.41789 8.65772 3.24766 8.57579 3.12803 8.43912L0.165063 5.05451C-0.0774581 4.77748 -0.0494802 4.35629 0.227553 4.11377C0.504586 3.87125 0.925768 3.89923 1.16829 4.17626L3.67342 7.0379L10.8737 0.183799C11.1404 -0.070061 11.5624 -0.0596674 11.8162 0.207014Z"
+                    fill="#ED3C6A"
+                  />
+                </svg>
+              </span>
             ) : (
-              <CrossIcon />
+              <span
+                className={`flex size-8 items-center justify-center rounded-full ${highlighted ? 'bg-white' : 'bg-[#F7F8F9]'}`}
+              >
+                <svg
+                  width="9"
+                  height="9"
+                  viewBox="0 0 9 9"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8.68054 8.68054C8.94089 8.42019 8.94089 7.99808 8.68054 7.73773L5.38117 4.43836L8.68145 1.13807C8.9418 0.877724 8.9418 0.455613 8.68145 0.195264C8.4211 -0.0650856 7.99899 -0.0650859 7.73864 0.195263L4.43836 3.49555L1.13807 0.195262C0.877722 -0.0650873 0.455612 -0.0650874 0.195262 0.195262C-0.0650874 0.455612 -0.0650873 0.877722 0.195262 1.13807L3.49555 4.43836L0.196167 7.73774C-0.0641821 7.99808 -0.0641817 8.4202 0.196168 8.68054C0.456517 8.94089 0.878628 8.94089 1.13898 8.68055L4.43836 5.38117L7.73773 8.68054C7.99808 8.94089 8.42019 8.94089 8.68054 8.68054Z"
+                    fill="#191D23"
+                  />
+                </svg>
+              </span>
             )}
             <span
-              className={`text-sm ${
+              className={`font-manrope text-[16px] leading-[130%] font-medium ${
                 feature.included
                   ? highlighted
-                    ? "text-white"
-                    : "text-gray-800"
+                    ? 'text-white'
+                    : 'text-[#191D23]'
                   : highlighted
-                    ? "text-white/50"
-                    : "text-gray-400"
+                    ? 'text-white'
+                    : 'text-[#A0ABBB]'
               }`}
             >
               {feature.label}
@@ -155,5 +106,5 @@ export default function PricingCard({ tier, cycle }: PricingCardProps) {
         ))}
       </ul>
     </div>
-  );
+  )
 }
