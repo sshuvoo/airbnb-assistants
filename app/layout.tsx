@@ -40,7 +40,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${dmSans.variable} ${poppins.variable} ${plusJakartaSans.variable} ${manrope.variable} antialiased`}
+      className={`${dmSans.variable} ${poppins.variable} ${plusJakartaSans.variable} ${manrope.variable} scroll-smooth antialiased`}
     >
       <body className="font-primary text-text">
         <Header />

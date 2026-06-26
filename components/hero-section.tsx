@@ -7,7 +7,7 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="hero-grid flex h-100 flex-col items-center justify-end sm:h-120 lg:h-146"
+      className="hero-grid flex h-100 scroll-mt-20 flex-col items-center justify-end sm:h-120 lg:h-146"
     >
       <div className="relative flex h-90 flex-col items-center justify-center sm:h-100 lg:h-130.75 lg:max-w-230.75">
         <svg

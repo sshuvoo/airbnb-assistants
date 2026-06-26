@@ -4,7 +4,7 @@ import { SectionHeader } from './section-header'
 
 export function ToolsSection() {
   return (
-    <>
+    <section id="tools">
       <SectionHeader
         className="pt-21 pb-34"
         title={{ plain: 'Our', accent: 'Tools' }}
@@ -12,7 +12,7 @@ export function ToolsSection() {
       />
       <div className="bg-foreground pt-9.5 pb-21.25">
         <div className="container">
-          <div className="xs:grid-cols-2 mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-[auto_auto_auto] lg:gap-10">
+          <div className="xs:grid-cols-2 mx-auto grid max-w-5xl grid-cols-1 justify-center gap-6 md:grid-cols-[auto_auto_auto] lg:gap-x-11.25 lg:gap-y-10">
             {toolsData.map((tool) => (
               <div
                 key={tool.id}
@@ -30,6 +30,6 @@ export function ToolsSection() {
           </div>
         </div>
       </div>
-    </>
+    </section>
   )
 }

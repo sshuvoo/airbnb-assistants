@@ -4,7 +4,7 @@ import { SectionHeader } from './section-header'
 
 export function ServiceSection() {
   return (
-    <section>
+    <section id="services" className="scroll-mt-20">
       <SectionHeader
         className="py-13.75"
         title={{ plain: 'Our', accent: 'Service' }}

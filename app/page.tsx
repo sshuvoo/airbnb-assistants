@@ -10,9 +10,9 @@ import { TrustedBrands } from '@/components/trusted-brands'
 export default function Home() {
   return (
     <>
-      {/* <HeroSection /> */}
-      {/* <TrustedBrands /> */}
-      {/* <ServiceSection />  */}
+      <HeroSection />
+      <TrustedBrands />
+      <ServiceSection />
       <PricingSection />
       <ToolsSection />
       <HowItWorksSection />

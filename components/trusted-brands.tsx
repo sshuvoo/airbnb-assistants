@@ -42,7 +42,12 @@ export function TrustedBrands() {
       </div>
       <div className="bg-foreground mt-9 flex h-19.25 items-center justify-center">
         <div className="mx-auto max-w-7xl overflow-hidden px-5">
-          <Marquee pauseOnHover>
+          <Marquee
+            gradientWidth={100}
+            gradient
+            gradientColor="#f6f6f6"
+            pauseOnHover
+          >
             <div className="flex items-center gap-x-15.25">
               {[...brandList, ...brandList].map((brand, i) => (
                 <Image
