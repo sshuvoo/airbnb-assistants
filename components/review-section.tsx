@@ -13,7 +13,7 @@ export function ReviewSection() {
   const [activeIndex, setActiveIndex] = useState(0)
 
   return (
-    <section className="pb-25.75">
+    <section className="pb-8 sm:pb-14 md:pb-20 lg:pb-25.75">
       <SectionHeader
         title={{
           plain: 'Check Our Clients',

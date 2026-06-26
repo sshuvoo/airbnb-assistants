@@ -1,4 +1,7 @@
+'use client'
+
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 import { SectionHeader } from './section-header'
 import {
   Accordion,
@@ -10,11 +13,11 @@ import { faqData } from '@/data/faq-data'
 
 export function FAQSection() {
   return (
-    <section className="space-y-4.75 py-19.25">
+    <section className="space-y-4.75 py-8 sm:py-12 lg:py-19.25">
       <div className="container">
-        <div className="bg-card rounded-[16px] pb-18.75">
+        <div className="bg-card rounded-[16px] sm:pb-8 md:pb-12 lg:pb-18.75">
           <SectionHeader
-            className="py-18.5"
+            className="py-10 sm:py-14 lg:py-18.5"
             title={{
               plain: 'Frequently Asked',
               accent: 'Questions',
@@ -63,8 +66,23 @@ export function FAQSection() {
       </div>
       <div className="container">
         <div className="bg-card space-y-8 rounded-[16px] px-4 py-8">
-          <div className="relative mx-auto h-14 w-30">
-            <div className="absolute left-1/2 z-1 size-14 -translate-x-1/2 overflow-hidden rounded-full border-[1.5px] border-white bg-[#C7B9DA]">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            className="relative mx-auto h-14 w-30"
+          >
+            <motion.div
+              variants={{
+                hidden: { scale: 0.5, opacity: 0 },
+                visible: {
+                  scale: 1,
+                  opacity: 1,
+                  transition: { duration: 0.4, type: 'spring', bounce: 0.4 },
+                },
+              }}
+              className="absolute left-1/2 z-1 size-14 -translate-x-1/2 overflow-hidden rounded-full border-[1.5px] border-white bg-[#C7B9DA]"
+            >
               <Image
                 className="rounded-full object-cover"
                 src="/images/supports/avater-center.png"
@@ -72,8 +90,25 @@ export function FAQSection() {
                 width={56}
                 height={56}
               />
-            </div>
-            <div className="absolute right-0 bottom-0 z-0 size-12 overflow-hidden rounded-full border-[1.5px] border-white bg-[#D9B9BB]">
+            </motion.div>
+            <motion.div
+              variants={{
+                hidden: { scale: 56 / 48, x: -36, y: -4, opacity: 0 },
+                visible: {
+                  scale: 1,
+                  x: 0,
+                  y: 0,
+                  opacity: 1,
+                  transition: {
+                    delay: 0.25,
+                    duration: 0.5,
+                    type: 'spring',
+                    bounce: 0.35,
+                  },
+                },
+              }}
+              className="absolute right-0 bottom-0 z-0 size-12 overflow-hidden rounded-full border-[1.5px] border-white bg-[#D9B9BB]"
+            >
               <Image
                 className="rounded-full object-cover"
                 src="/images/supports/avatar-right.png"
@@ -81,8 +116,25 @@ export function FAQSection() {
                 width={48}
                 height={48}
               />
-            </div>
-            <div className="absolute bottom-0 left-0 z-0 size-12 overflow-hidden rounded-full border-[1.5px] border-white bg-[#ABB677]">
+            </motion.div>
+            <motion.div
+              variants={{
+                hidden: { scale: 56 / 48, x: 36, y: -4, opacity: 0 },
+                visible: {
+                  scale: 1,
+                  x: 0,
+                  y: 0,
+                  opacity: 1,
+                  transition: {
+                    delay: 0.25,
+                    duration: 0.5,
+                    type: 'spring',
+                    bounce: 0.35,
+                  },
+                },
+              }}
+              className="absolute bottom-0 left-0 z-0 size-12 overflow-hidden rounded-full border-[1.5px] border-white bg-[#ABB677]"
+            >
               <Image
                 className="rounded-full object-cover"
                 src="/images/supports/avatar-left.png"
@@ -90,8 +142,8 @@ export function FAQSection() {
                 width={48}
                 height={48}
               />
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           <div>
             <h3 className="text-center text-[20px] leading-7.5 font-bold text-[#101828]">

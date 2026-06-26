@@ -74,7 +74,7 @@ export function Header() {
       </header>
 
       <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
-        <SheetContent className="z-99999">
+        <SheetContent className="z-99999 max-w-87.5">
           <SheetHeader className="sr-only">
             <SheetTitle>Mobile Menu</SheetTitle>
             <SheetDescription>

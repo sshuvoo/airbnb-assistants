@@ -10,7 +10,7 @@ export function ButtonPrimary({
   return (
     <button
       className={cn(
-        'bg-primary flex items-center gap-2.5 rounded-[5px] px-6 py-4.5 text-sm leading-[130%] font-bold tracking-normal text-white',
+        'bg-primary flex items-center gap-2.5 rounded-[5px] px-5.5 py-4.5 text-sm leading-[100%] font-bold tracking-normal text-white',
         className,
       )}
     >

@@ -5,7 +5,7 @@ import Link from 'next/link'
 export function Footer() {
   return (
     <footer className="border-border border-t">
-      <section className="pt-22.5 pb-20.75">
+      <section className="py-8 sm:py-12 md:py-16 lg:pt-22.5 lg:pb-20.75">
         <div className="xs:grid-cols-2 container grid grid-cols-1 gap-y-8 sm:grid-cols-3 lg:grid-cols-5">
           <div className="xs:col-span-2 pr-8 sm:col-span-3 lg:col-span-2">
             <Image

@@ -20,7 +20,7 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="hero-grid flex h-auto scroll-mt-20 flex-col items-center justify-end py-10 sm:h-120 lg:h-146"
+      className="hero-grid flex h-auto scroll-mt-20 flex-col items-center justify-end py-20 lg:h-146 lg:py-0"
     >
       <div className="container flex justify-center">
         <div className="relative flex h-auto flex-col items-center justify-center sm:h-100 lg:h-130.75 lg:max-w-230.75">
