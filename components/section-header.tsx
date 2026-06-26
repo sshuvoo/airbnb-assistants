@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from '@/lib/utils'
 
 export function SectionHeader({
   title,
@@ -8,20 +8,20 @@ export function SectionHeader({
   headigClassName,
 }: {
   title: {
-    plain: string;
-    accent: string;
-  };
-  description: string;
-  className?: string;
-  headigClassName?: string;
-  descriptionClassName?: string;
+    plain: string
+    accent: string
+  }
+  description: string
+  className?: string
+  headigClassName?: string
+  descriptionClassName?: string
 }) {
   return (
-    <div className={cn("pt-30.25 pb-15", className)}>
-      <div className="max-w-7xl px-5 mx-auto">
+    <div className={cn('pt-30.25 pb-15', className)}>
+      <div className="mx-auto max-w-7xl px-5">
         <h1
           className={cn(
-            "text-center font-bold text-[32px] leading-[100%] tracking-normal",
+            'text-center text-[32px] leading-[100%] font-bold tracking-normal',
             headigClassName,
           )}
         >
@@ -29,7 +29,7 @@ export function SectionHeader({
         </h1>
         <p
           className={cn(
-            "text-center font-medium text-sm leading-[100%] mt-5.5 tracking-normal max-w-184.5 mx-auto",
+            'mx-auto mt-5.5 max-w-184.5 text-center text-sm leading-[130%] font-medium tracking-normal',
             descriptionClassName,
           )}
         >
@@ -37,5 +37,5 @@ export function SectionHeader({
         </p>
       </div>
     </div>
-  );
+  )
 }
