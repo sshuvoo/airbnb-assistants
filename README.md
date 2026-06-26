@@ -1,36 +1,113 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🏡 Airbnb Assistants - Landing Page
 
-## Getting Started
+Welcome to the **Airbnb Assistants** repository! This project is a pixel-perfect, animated, and responsive Next.js landing page converted from a Figma design. Built with modern web technologies.
 
-First, run the development server:
+## ✨ Features
+
+- **Pixel-Perfect Implementation:** Accurately translated from the provided Figma design.
+- **Responsive Layout:** Works flawlessly on desktop, tablet, and mobile devices.
+- **Smooth Animations:** Powered by Framer Motion for scroll-linked and viewport-based animations.
+- **Interactive Carousels & Marquees:** Touch-friendly review sliders and infinite scrolling brand tickers.
+- **Modern Tech Stack:** Utilizes Next.js App Router, React 19, and Tailwind CSS v4.
+
+## 🚀 Tech Stack & Packages
+
+Here is a breakdown of the core packages used and their purpose in the project:
+
+### Framework & Styling
+
+- **[Next.js (v16)](https://nextjs.org/):** The core React framework handling routing, Server Components, and optimized rendering.
+- **[React (v19)](https://react.dev/):** Library for building the user interface.
+- **[Tailwind CSS (v4)](https://tailwindcss.com/):** Utility-first CSS framework for rapid UI styling.
+
+### Animations & Interactions
+
+- **[Framer Motion](https://www.framer.com/motion/):** Used for complex, declarative animations (e.g., staggering FAQ avatars, scroll-triggered fade-ins).
+- **[tw-animate-css](https://github.com/morteza-fsh/tw-animate-css):** Provides additional utility classes for quick CSS animations.
+
+### UI Components & Carousels
+
+- **[shadcn/ui & Radix UI](https://ui.shadcn.com/):** Headless, accessible UI primitives (used for components like `Sheet` for mobile menus).
+- **[Swiper](https://swiperjs.com/):** Used for the touch-responsive testimonial slider in the `ReviewSection`.
+- **[React Fast Marquee](https://www.react-fast-marquee.com/):** Implements the infinite scrolling ticker for the `TrustedBrands` and tools sections.
+- **[Lucide React](https://lucide.dev/):** Beautiful, consistent SVG icons used throughout the layout.
+
+### Utilities
+
+- **`class-variance-authority`, `clsx`, `tailwind-merge`:** Essential utilities for dynamically merging Tailwind classes and managing component style variants without conflicts.
+
+## 📂 Project Structure
+
+The project follows a component-driven architecture:
+
+```text
+.
+├── app/
+│   ├── layout.tsx         # Global layout and fonts
+│   ├── page.tsx           # Main landing page assembling all sections
+│   └── globals.css        # Global styles and Tailwind directives
+├── components/
+│   ├── header.tsx         # Navigation bar with dynamic scroll shadows
+│   ├── hero-section.tsx   # Top section with call-to-action
+│   ├── trusted-brands.tsx # Marquee displaying partner logos
+│   ├── service-section.tsx# Grid of services offered
+│   ├── how-it-works-section.tsx # Step-by-step guide
+│   ├── pricing-section.tsx# Pricing tiers and cards
+│   ├── review-section.tsx # Swiper carousel for user testimonials
+│   ├── faq-section.tsx    # Accordion FAQ with animated avatars
+│   ├── footer.tsx         # Site footer and links
+│   └── ui/                # Reusable shadcn/ui components (e.g., Sheet)
+└── package.json
+```
+
+## 🛠️ Getting Started
+
+Follow these instructions to get the project up and running on your local machine.
+
+### Prerequisites
+
+Make sure you have [Node.js](https://nodejs.org/) installed (v18 or higher is recommended).
+
+### Installation
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/sshuvoo/airbnb-assistants.git
+   cd airbnb-assistants
+   ```
+
+2. **Install dependencies:**
+   Using npm:
+   ```bash
+   npm install
+   ```
+   _Or using yarn, pnpm, or bun depending on your preference._
+
+### Running the Development Server
+
+Start the development server with hot-reloading:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the application in action.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Building for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To create an optimized production build:
 
-## Learn More
+```bash
+npm run build
+```
 
-To learn more about Next.js, take a look at the following resources:
+To start the production server after building:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Thanks for reviewing the code!
