@@ -18,9 +18,9 @@ export function HowItWorksSection() {
         title={{ plain: 'Getting Started is', accent: 'Easy' }}
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
       />
-      <div className="mx-auto grid max-w-7xl grid-cols-[auto_auto_auto] justify-center gap-x-9.5">
+      <div className="xs:grid-cols-[auto_auto] container grid grid-cols-[auto] justify-center gap-x-9.5 gap-y-8 lg:grid-cols-[auto_auto_auto]">
         {howItWorksData.map((item) => (
-          <div className="w-71.25" key={item.step}>
+          <div className="xs:w-auto w-71.25 sm:w-71.25" key={item.step}>
             <div className="relative flex h-48 items-center justify-center rounded-[9px] border-2 border-[#FDEBF0]">
               <Image
                 src={item.icon}
@@ -28,7 +28,7 @@ export function HowItWorksSection() {
                 width={item.iconSize.w}
                 height={item.iconSize.h}
               />
-              <div className="border-primary bg-background absolute -top-5.25 -left-4.25 flex size-19 items-center justify-center rounded-full border-[5px] text-[29.23px] leading-[130%] font-medium">
+              <div className="border-primary bg-background xs:size-14 xs:text-[20px] absolute -top-5.25 -left-4.25 flex size-19 items-center justify-center rounded-full border-[5px] text-[29.23px] leading-[130%] font-medium md:size-19 md:text-[29.23px]">
                 {item.step}
               </div>
             </div>
@@ -39,9 +39,9 @@ export function HowItWorksSection() {
         ))}
       </div>
       <div className="container mt-21">
-        <div className="grid grid-cols-[1fr_auto] rounded-[33px] border border-[#F8BECD] bg-[#FDEBF0] p-9.5">
-          <div className="pt-9.25 pb-11.25 pl-12.5">
-            <h2 className="text-[36px] leading-[130%] font-bold">
+        <div className="xs:p-6 flex flex-col-reverse rounded-[33px] border border-[#F8BECD] bg-[#FDEBF0] p-4 lg:grid lg:grid-cols-2 lg:gap-4 lg:p-9.5 xl:grid-cols-[1fr_auto]">
+          <div className="pt-9.25 pb-4 lg:pb-11.25 lg:pl-12.5">
+            <h2 className="text-2xl leading-[130%] font-bold sm:text-[36px]">
               Few Reasons Why you Choose us?
             </h2>
             <p className="font-primary mt-6.5 text-sm leading-[130%] font-semibold">
@@ -67,9 +67,12 @@ export function HowItWorksSection() {
               ))}
             </ul>
 
-            <ButtonPrimary className="mt-3.75" label="Schedule A Meeting" />
+            <ButtonPrimary
+              className="mt-3.75 w-full sm:w-auto"
+              label="Schedule A Meeting"
+            />
           </div>
-          <div className="flex justify-end">
+          <div className="flex justify-center lg:justify-end">
             <Image
               className="aspect-642/465 object-contain"
               src="/images/get-started/get-started-cover.png"
