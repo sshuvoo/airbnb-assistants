@@ -119,3 +119,9 @@
   padding-inline: 2rem;
   max-width: 1304px;
 }
+
+.swiper-slide-active {
+  box-shadow: 0px 4px 77.4px 0px #88888869;
+  border-radius: 11px;
+  transition: box-shadow 0.3s ease-in-out;
+}
