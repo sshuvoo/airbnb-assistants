@@ -66,10 +66,10 @@ function ReviewCard({
         />
       </div>
       <div className="flex flex-col justify-center py-4 pr-4 sm:py-0 sm:pr-10.5">
-        <h2 className="text-[18px] leading-[100%] font-bold sm:text-[20px]">
+        <h2 className="text-[18px] leading-[130%] font-bold sm:text-[20px]">
           {name}
         </h2>
-        <p className="mt-1.25 text-[13px] leading-[120%] font-medium sm:text-sm sm:leading-[100%]">
+        <p className="mt-1.25 text-[13px] leading-[120%] font-medium sm:text-sm sm:leading-[130%]">
           {feedback}
         </p>
         <div className="mt-3 flex items-center gap-x-1">

@@ -1,22 +1,22 @@
-import { cn } from "@/lib/utils";
+import { cn } from '@/lib/utils'
 
 export function ButtonPrimary({
   className,
-  label = "Schedule A Meeting",
+  label = 'Schedule A Meeting',
 }: {
-  className?: string;
-  label?: string;
+  className?: string
+  label?: string
 }) {
   return (
     <button
       className={cn(
-        "font-bold text-sm bg-primary text-white flex items-center gap-2.5 px-6 py-4.5 rounded-[5px] leading-[100%] tracking-normal",
+        'bg-primary flex items-center gap-2.5 rounded-[5px] px-6 py-4.5 text-sm leading-[130%] font-bold tracking-normal text-white',
         className,
       )}
     >
       {label}
       <svg
-        className="w-2.5 h-2.25"
+        className="h-2.25 w-2.5"
         viewBox="0 0 10 9"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -27,5 +27,5 @@ export function ButtonPrimary({
         />
       </svg>
     </button>
-  );
+  )
 }

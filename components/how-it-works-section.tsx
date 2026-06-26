@@ -28,11 +28,11 @@ export function HowItWorksSection() {
                 width={item.iconSize.w}
                 height={item.iconSize.h}
               />
-              <div className="border-primary bg-background absolute -top-5.25 -left-4.25 flex size-19 items-center justify-center rounded-full border-[5px] text-[29.23px] leading-[100%] font-medium">
+              <div className="border-primary bg-background absolute -top-5.25 -left-4.25 flex size-19 items-center justify-center rounded-full border-[5px] text-[29.23px] leading-[130%] font-medium">
                 {item.step}
               </div>
             </div>
-            <h3 className="mx-auto mt-8.25 max-w-63.75 text-center text-[20px] leading-[100%] font-semibold">
+            <h3 className="mx-auto mt-8.25 max-w-63.75 text-center text-[20px] leading-[130%] font-semibold">
               {item.label}
             </h3>
           </div>
@@ -60,7 +60,7 @@ export function HowItWorksSection() {
                       height={8.67}
                     />
                   </div>
-                  <span className="text-text text-[16px] leading-[100%] font-bold">
+                  <span className="text-text text-[16px] leading-[130%] font-bold">
                     {reason}
                   </span>
                 </li>
