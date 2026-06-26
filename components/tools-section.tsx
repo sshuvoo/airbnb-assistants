@@ -12,11 +12,11 @@ export function ToolsSection() {
       />
       <div className="bg-foreground pt-9.5 pb-21.25">
         <div className="container">
-          <div className="xs:grid-cols-2 mx-auto grid max-w-5xl grid-cols-1 justify-center gap-6 md:grid-cols-[auto_auto_auto] lg:gap-x-11.25 lg:gap-y-10">
+          <div className="xs:grid-cols-2 mx-auto grid max-w-5xl grid-cols-1 justify-center gap-6 md:grid-cols-3 lg:grid-cols-[auto_auto_auto] lg:gap-x-11.25 lg:gap-y-10">
             {toolsData.map((tool) => (
               <div
                 key={tool.id}
-                className="bg-background flex h-34.75 items-center justify-center rounded-[11px] transition-all duration-300 hover:shadow-[0px_4px_30px_0px_#FF8AA847] xl:w-72.5"
+                className="bg-background flex h-34.75 items-center justify-center rounded-[11px] transition-all duration-300 hover:shadow-[0px_4px_30px_0px_#FF8AA847] lg:w-72.5"
               >
                 <Image
                   className="xs:h-12 h-14 max-h-14 max-w-52.5 sm:h-14"

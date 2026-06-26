@@ -15,9 +15,9 @@ export function PricingSection() {
       <div className="container">
         <SectionHeader
           className="pt-18.25 pb-9.5"
-          headigClassName="text-[40px]"
+          headigClassName="md:text-[40px]"
           title={{ plain: 'Airbnb Assistent', accent: 'pricing' }}
-          descriptionClassName="mt-4 text-[#191D23] font-normal text-[20px]"
+          descriptionClassName="mt-4 text-[#191D23] font-normal md:text-[20px]"
           description="Choose a plan that’s right for you"
         />
 

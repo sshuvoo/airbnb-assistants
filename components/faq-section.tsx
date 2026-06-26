@@ -19,7 +19,7 @@ export function FAQSection() {
               plain: 'Frequently Asked',
               accent: 'Questions',
             }}
-            descriptionClassName="font-normal text-[20px] leading-[30px] mt-[20px]"
+            descriptionClassName="font-normal sm:text-[20px] leading-[30px] mt-[20px]"
             description="Everything you need to know about the product and billing."
           />
           <div className="mt-1.5 flex justify-center px-4 sm:px-8 lg:px-0">
@@ -62,7 +62,7 @@ export function FAQSection() {
         </div>
       </div>
       <div className="container">
-        <div className="bg-card space-y-8 rounded-[16px] py-8">
+        <div className="bg-card space-y-8 rounded-[16px] px-4 py-8">
           <div className="relative mx-auto h-14 w-30">
             <div className="absolute left-1/2 z-1 size-14 -translate-x-1/2 overflow-hidden rounded-full border-[1.5px] border-white bg-[#C7B9DA]">
               <Image

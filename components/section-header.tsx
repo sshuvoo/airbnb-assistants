@@ -21,7 +21,7 @@ export function SectionHeader({
       <div className="mx-auto max-w-7xl px-5">
         <h1
           className={cn(
-            'text-center text-[32px] leading-[130%] font-bold tracking-normal',
+            'text-center text-2xl leading-[130%] font-bold tracking-normal sm:text-[32px]',
             headigClassName,
           )}
         >
