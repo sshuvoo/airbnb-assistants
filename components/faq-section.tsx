@@ -72,7 +72,7 @@ export function FAQSection() {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true, amount: 1 }}
             className="relative mx-auto h-14 w-30"
           >
             <motion.div
