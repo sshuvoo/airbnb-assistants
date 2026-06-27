@@ -1,19 +1,22 @@
 'use client'
 
 import { Review, reviewsData } from '@/data/review-data'
-import { SectionHeader } from './section-header'
 import Image from 'next/image'
-import { Swiper, SwiperSlide } from 'swiper/react'
+import { useState } from 'react'
 import 'swiper/css'
 import 'swiper/css/autoplay'
 import { Autoplay } from 'swiper/modules'
-import { useState } from 'react'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { SectionHeader } from './section-header'
 
 export function ReviewSection() {
   const [activeIndex, setActiveIndex] = useState(0)
 
   return (
-    <section className="pb-8 sm:pb-14 md:pb-20 lg:pb-25.75">
+    <section
+      id="reviews"
+      className="scroll-mt-20 pb-8 sm:pb-14 md:pb-20 lg:pb-25.75"
+    >
       <SectionHeader
         title={{
           plain: 'Check Our Clients',

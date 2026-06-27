@@ -1,8 +1,5 @@
 'use client'
 
-import Image from 'next/image'
-import { motion } from 'framer-motion'
-import { SectionHeader } from './section-header'
 import {
   Accordion,
   AccordionContent,
@@ -10,10 +7,16 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion'
 import { faqData } from '@/data/faq-data'
+import { motion } from 'framer-motion'
+import Image from 'next/image'
+import { SectionHeader } from './section-header'
 
 export function FAQSection() {
   return (
-    <section className="space-y-4.75 py-8 sm:py-12 lg:py-19.25">
+    <section
+      id="faq"
+      className="scroll-mt-20 space-y-4.75 py-8 sm:py-12 lg:py-19.25"
+    >
       <div className="container">
         <div className="bg-card rounded-[16px] sm:pb-8 md:pb-12 lg:pb-18.75">
           <SectionHeader

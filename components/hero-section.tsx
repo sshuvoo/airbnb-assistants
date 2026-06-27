@@ -1,11 +1,11 @@
 'use client'
 
-import Link from 'next/link'
-import { ButtonPrimary } from './button-primary'
-import Image from 'next/image'
 import { cn } from '@/lib/utils'
 import { motion } from 'framer-motion'
-import { useState, useEffect } from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
+import { useEffect, useState } from 'react'
+import { ButtonPrimary } from './button-primary'
 
 export function HeroSection() {
   const [isAnimating, setIsAnimating] = useState(true)
@@ -19,7 +19,7 @@ export function HeroSection() {
 
   return (
     <section
-      id="hero"
+      id="home"
       className="hero-grid flex h-auto scroll-mt-20 flex-col items-center justify-end py-20 lg:h-146 lg:py-0"
     >
       <div className="container flex justify-center">

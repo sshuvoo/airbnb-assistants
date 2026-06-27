@@ -4,7 +4,7 @@ import { SectionHeader } from './section-header'
 
 export function ToolsSection() {
   return (
-    <section id="tools">
+    <section id="tools" className="scroll-mt-20">
       <SectionHeader
         className="pt-16 pb-16 sm:pb-24 lg:pt-21 lg:pb-34"
         title={{ plain: 'Our', accent: 'Tools' }}
