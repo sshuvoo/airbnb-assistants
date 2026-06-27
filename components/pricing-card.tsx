@@ -1,3 +1,5 @@
+import { useEffect, useRef, useState } from 'react'
+import { animate, useInView, useMotionValue } from 'framer-motion'
 import type { BillingCycle, PricingTier } from '@/types/pricing'
 
 export function PricingCard({
@@ -8,11 +10,30 @@ export function PricingCard({
   cycle: BillingCycle
 }) {
   const { highlighted } = tier
+  const cardRef = useRef(null)
+  const isInView = useInView(cardRef, { once: false, amount: 0.3 })
 
   const isYearly = cycle === 'yearly'
+  const targetPrice = isYearly ? tier.price.yearly : tier.price.monthly
+
+  const motionValue = useMotionValue(0)
+  const [displayPrice, setDisplayPrice] = useState(0)
+
+  useEffect(() => {
+    if (!isInView) return
+
+    const controls = animate(motionValue, targetPrice, {
+      duration: 1.2,
+      ease: [0.16, 1, 0.3, 1],
+      onUpdate: (latest) => setDisplayPrice(Math.round(latest)),
+    })
+
+    return controls.stop
+  }, [isInView, targetPrice, motionValue])
 
   return (
     <div
+      ref={cardRef}
       className={`font-manrope w-full rounded-[10px] border px-6 py-10 lg:w-94.75 ${highlighted ? 'bg-primary border-transparent' : 'border-[#FAC4D2] bg-white'}`}
     >
       <div className="">
@@ -34,7 +55,7 @@ export function PricingCard({
             highlighted ? 'text-white' : 'text-[#191D23]'
           }`}
         >
-          ${isYearly ? tier.price.yearly : tier.price.monthly}
+          ${displayPrice}
         </span>
         <span
           className={`font-manrope text-[16px] leading-[130%] font-light ${
