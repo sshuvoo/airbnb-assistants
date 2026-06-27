@@ -31,7 +31,7 @@ export function ServiceSection() {
               <p className="mt-3.5 max-w-76.5 text-sm leading-[130%] font-medium tracking-normal">
                 {service.description}
               </p>
-              <button className="border-primary text-primary mt-8.75 h-9.5 w-29.75 rounded-[44px] border text-sm leading-[130%] font-medium tracking-normal">
+              <button className="border-primary text-primary hover:bg-primary mt-8.75 h-9.5 w-29.75 rounded-[44px] border text-sm leading-[130%] font-medium tracking-normal transition-all duration-300 hover:text-white">
                 Read More
               </button>
             </div>

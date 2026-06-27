@@ -65,67 +65,69 @@ export function HeroSection() {
           </div>
 
           {isAnimating ? (
-            <div className="absolute bottom-2 z-20 hidden items-center justify-center gap-8 lg:flex">
-              <motion.div
-                className="size-10 overflow-hidden rounded-full"
-                layoutId="brand-1"
-                initial={{ rotate: 29.74 }}
-                animate={{ rotate: 29.74 }}
-              >
-                <Image
-                  className="scale-150"
-                  src={'./images/brands/brand-top-left.svg'}
-                  width={106.24}
-                  height={106.24}
-                  alt="airbnb"
-                  priority
-                />
-              </motion.div>
-              <motion.div
-                className="size-10 overflow-hidden rounded-full"
-                layoutId="brand-2"
-                initial={{ rotate: -27.61 }}
-                animate={{ rotate: -27.61 }}
-              >
-                <Image
-                  className="scale-150"
-                  src={'./images/brands/brand-top-right.svg'}
-                  width={65.69}
-                  height={65.69}
-                  alt="top-right"
-                  priority
-                />
-              </motion.div>
-              <motion.div
-                className="size-10 overflow-hidden rounded-full"
-                layoutId="brand-3"
-                initial={{ rotate: 23.23 }}
-                animate={{ rotate: 23.23 }}
-              >
-                <Image
-                  className="scale-150"
-                  src={'./images/brands/brand-bottom-left.svg'}
-                  width={75.89}
-                  height={75.89}
-                  alt="bottom-left"
-                  priority
-                />
-              </motion.div>
-              <motion.div
-                className="size-10 overflow-hidden rounded-full"
-                layoutId="brand-4"
-                initial={{ rotate: -33.8 }}
-                animate={{ rotate: -33.8 }}
-              >
-                <Image
-                  className="scale-160"
-                  src={'./images/brands/brand-bottom-right.svg'}
-                  width={89.11}
-                  height={89.11}
-                  alt="bottom-right"
-                  priority
-                />
-              </motion.div>
+            <div className="absolute bottom-4 z-20 hidden items-center justify-center gap-8 lg:flex">
+              <div className="relative size-10">
+                <motion.div
+                  className="absolute top-1/2 left-1/2 size-10 -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full border-2 border-white"
+                  layoutId="brand-1"
+                  initial={{ rotate: 29.74 }}
+                  animate={{ rotate: 29.74 }}
+                >
+                  <Image
+                    className="scale-150"
+                    src={'./images/brands/brand-top-left.svg'}
+                    width={106.24}
+                    height={106.24}
+                    alt="airbnb"
+                    priority
+                  />
+                </motion.div>
+                <motion.div
+                  className="absolute top-1/2 left-1/2 size-10 -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full border-2 border-white"
+                  layoutId="brand-2"
+                  initial={{ rotate: -27.61 }}
+                  animate={{ rotate: -27.61 }}
+                >
+                  <Image
+                    className="scale-150"
+                    src={'./images/brands/brand-top-right.svg'}
+                    width={65.69}
+                    height={65.69}
+                    alt="top-right"
+                    priority
+                  />
+                </motion.div>
+                <motion.div
+                  className="absolute top-1/2 left-1/2 size-10 -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full border-2 border-white"
+                  layoutId="brand-3"
+                  initial={{ rotate: 23.23 }}
+                  animate={{ rotate: 23.23 }}
+                >
+                  <Image
+                    className="scale-150"
+                    src={'./images/brands/brand-bottom-left.svg'}
+                    width={75.89}
+                    height={75.89}
+                    alt="bottom-left"
+                    priority
+                  />
+                </motion.div>
+                <motion.div
+                  className="absolute top-1/2 left-1/2 size-10 -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full border-2 border-white"
+                  layoutId="brand-4"
+                  initial={{ rotate: -33.8 }}
+                  animate={{ rotate: -33.8 }}
+                >
+                  <Image
+                    className="scale-160"
+                    src={'./images/brands/brand-bottom-right.svg'}
+                    width={89.11}
+                    height={89.11}
+                    alt="bottom-right"
+                    priority
+                  />
+                </motion.div>
+              </div>
             </div>
           ) : (
             <>
