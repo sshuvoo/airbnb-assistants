@@ -34,7 +34,7 @@ export function Header() {
     <>
       <header className="bg-background sticky top-0 z-9999 w-full shadow-[0px_4px_62px_0px_#FAC4D2A1]">
         <div className="bg-background container flex h-16 items-center justify-between sm:h-22.25">
-          <Link href={'#home'}>
+          <Link href={'/'}>
             <Image
               className="aspect-125/45 w-20 sm:w-31.25"
               src={'./images/logo/google.svg'}
