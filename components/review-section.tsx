@@ -25,6 +25,7 @@ export function ReviewSection() {
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
       />
       <div>
+        {/* Auto-scrolling carousel: centered, loop, slides shrink to mobile width */}
         <Swiper
           style={{ overflowY: 'visible', overflowX: 'clip' }}
           modules={[Autoplay]}
@@ -56,6 +57,7 @@ function ReviewCard({
   isActive,
 }: Review & { isActive: boolean }) {
   return (
+    // Active card gets white bg and no border; inactive cards get gray bg to fade out
     <div
       className={`mx-auto grid min-h-50 w-full grid-cols-[100px_1fr] rounded-[11px] border sm:w-132.5 sm:grid-cols-[167px_1fr] ${isActive ? 'bg-background border-transparent' : 'bg-foreground border-foreground'}`}
     >
@@ -75,6 +77,7 @@ function ReviewCard({
         <p className="mt-1.25 text-[13px] leading-[120%] font-medium sm:text-sm sm:leading-[130%]">
           {feedback}
         </p>
+        {/* Star rating: fill N stars based on the rating value */}
         <div className="mt-3 flex items-center gap-x-1">
           {Array(rating)
             .fill(0)

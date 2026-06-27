@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react'
 import { ButtonPrimary } from './button-primary'
 
 export function HeroSection() {
+  // On first render, brand icons start clustered at center then fan out to their corners
   const [isAnimating, setIsAnimating] = useState(true)
 
   useEffect(() => {
@@ -64,6 +65,7 @@ export function HeroSection() {
             </Link>
           </div>
 
+          {/* While animating, stack all brands at center so layoutId can smoothly transition them out */}
           {isAnimating ? (
             <div className="absolute bottom-4 z-20 hidden items-center justify-center gap-8 lg:flex">
               <div className="relative size-10">
@@ -242,6 +244,7 @@ export function HeroSection() {
   )
 }
 
+// Little colored dots scattered around the hero for visual flair
 function Dot({ className, delay = 0 }: { className?: string; delay?: number }) {
   return (
     <motion.div

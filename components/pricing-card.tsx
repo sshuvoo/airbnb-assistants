@@ -16,6 +16,7 @@ export function PricingCard({
   const isYearly = cycle === 'yearly'
   const targetPrice = isYearly ? tier.price.yearly : tier.price.monthly
 
+  // Animate the price number counting up/down when the card scrolls into view
   const motionValue = useMotionValue(0)
   const [displayPrice, setDisplayPrice] = useState(0)
 
@@ -72,6 +73,7 @@ export function PricingCard({
         Get Started Now
       </button>
 
+      {/* Feature list: check icon if included, X icon if not */}
       <ul className="mt-10 space-y-3">
         {tier.features.map((feature) => (
           <li key={feature.label} className="grid grid-cols-[auto_1fr] gap-3">

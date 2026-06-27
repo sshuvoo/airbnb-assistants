@@ -41,6 +41,7 @@ export function FAQSection() {
                   value={item.id}
                   className="pb-8 not-first:pt-6 not-last:border-[#BF214A47]"
                 >
+                  {/* Swap between plus/minus icon based on accordion open state */}
                   <AccordionTrigger className="gap-x-4 py-0 text-[18px] leading-7 font-bold **:data-[slot=accordion-trigger-icon]:hidden">
                     {item.question}
                     <Image
@@ -69,6 +70,7 @@ export function FAQSection() {
       </div>
       <div className="container">
         <div className="bg-card space-y-8 rounded-[16px] px-4 py-8">
+          {/* Support avatars: center one pops in first, side avatars slide in after a delay */}
           <motion.div
             initial="hidden"
             whileInView="visible"

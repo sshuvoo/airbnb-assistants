@@ -28,6 +28,7 @@ export function HowItWorksSection() {
                 width={item.iconSize.w}
                 height={item.iconSize.h}
               />
+              {/* Step number badge: positioned top-left, overlapping the card edge */}
               <div className="border-primary bg-background xs:size-14 xs:text-[20px] absolute -top-5.25 -left-4.25 flex size-19 items-center justify-center rounded-full border-[5px] text-[29.23px] leading-[130%] font-medium md:size-19 md:text-[29.23px]">
                 {item.step}
               </div>

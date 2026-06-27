@@ -2,10 +2,10 @@
 
 import { pricingTiers } from '@/data/pricing-data'
 import type { BillingCycle } from '@/types/pricing'
-import { useState } from 'react'
-import { SectionHeader } from './section-header'
-import { PricingCard } from './pricing-card'
 import Image from 'next/image'
+import { useState } from 'react'
+import { PricingCard } from './pricing-card'
+import { SectionHeader } from './section-header'
 
 export function PricingSection() {
   const [cycle, setCycle] = useState<BillingCycle>('monthly')
@@ -21,8 +21,10 @@ export function PricingSection() {
           description="Choose a plan that’s right for you"
         />
 
+        {/* Monthly/yearly toggle with floating 25% discount badge */}
         <div className="mb-22.5 flex justify-center">
           <div className="relative flex items-center gap-x-6">
+            {/* Discount badge: hidden on small screens, positioned above the toggle */}
             <Image
               src={'/images/pricing/discount-25.svg'}
               alt="discount-25"
@@ -38,6 +40,7 @@ export function PricingSection() {
               Pay Monthly
             </span>
 
+            {/* Toggle switch: accessible with role="switch" and aria-checked */}
             <button
               role="switch"
               aria-checked={cycle === 'yearly'}
