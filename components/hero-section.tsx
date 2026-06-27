@@ -57,7 +57,7 @@ export function HeroSection() {
             <ButtonPrimary />
 
             <Link
-              href={'/#pricing'}
+              href={'#pricing'}
               className="mt-6.75 text-sm leading-[130%] font-medium tracking-normal underline"
             >
               See Pricing
@@ -210,23 +210,23 @@ export function HeroSection() {
 
           <Dot
             delay={1.4}
-            className="top-10.75 left-[50%] size-3.75 translate-x-[-50%] bg-[#34E0A1] lg:block"
+            className="-top-10 left-[50%] size-2.5 lg:size-3.75 translate-x-[-50%] bg-[#34E0A1] lg:top-7 lg:block xl:top-10.75"
           />
           <Dot
             delay={1.5}
-            className="top-20.25 -left-37.25 size-3.25 bg-[#635BFF]"
+            className="top-10 left-4 size-2.5 lg:size-3.25 bg-[#635BFF] xl:top-20.25 xl:-left-37.25"
           />
           <Dot
             delay={1.6}
-            className="bottom-53.5 -left-8 size-3.25 bg-[#FF5A5F]"
+            className="bottom-25 left-2 size-2.5 lg:size-3.25 bg-[#FF5A5F] xl:bottom-53.5 xl:-left-8"
           />
           <Dot
             delay={1.7}
-            className="top-39 -right-14 size-3.25 bg-[#FFEC5A]"
+            className="top-39 right-1 size-2.5 lg:size-3.25 bg-[#FFEC5A] xl:-right-14"
           />
           <Dot
             delay={1.8}
-            className="bottom-8.25 left-[51%] size-3.25 translate-x-[-49%] bg-[#5AF9FF] lg:block"
+            className="-bottom-8.75 left-[51%] size-2.5 lg:size-3.25 translate-x-[-49%] bg-[#5AF9FF] lg:bottom-10 lg:block xl:bottom-8.25"
           />
           <Dot
             delay={1.9}
@@ -249,7 +249,7 @@ function Dot({ className, delay = 0 }: { className?: string; delay?: number }) {
       animate={{ scale: 1, opacity: 1 }}
       transition={{ duration: 0.5, delay, type: 'spring' }}
       className={cn(
-        'absolute hidden rounded-full opacity-100 shadow-[0px_-2px_6.3px_0px_#00000040_inset] xl:block',
+        'absolute rounded-full opacity-100 shadow-[0px_-2px_6.3px_0px_#00000040_inset]',
         className,
       )}
     />
