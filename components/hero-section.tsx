@@ -212,31 +212,31 @@ export function HeroSection() {
 
           <Dot
             delay={1.4}
-            className="-top-10 left-[50%] size-2.5 lg:size-3.75 translate-x-[-50%] bg-[#34E0A1] lg:top-7 lg:block xl:top-10.75"
+            className="-top-10 left-[50%] size-2.5 translate-x-[-50%] bg-[#34E0A1] lg:top-7 lg:block lg:size-3.75 xl:top-10.75"
           />
           <Dot
             delay={1.5}
-            className="top-10 left-4 size-2.5 lg:size-3.25 bg-[#635BFF] xl:top-20.25 xl:-left-37.25"
+            className="top-10 left-4 size-2.5 bg-[#635BFF] lg:size-3.25 xl:top-20.25 xl:-left-37.25"
           />
           <Dot
             delay={1.6}
-            className="bottom-25 left-2 size-2.5 lg:size-3.25 bg-[#FF5A5F] xl:bottom-53.5 xl:-left-8"
+            className="bottom-25 left-2 size-2.5 bg-[#FF5A5F] lg:size-3.25 xl:bottom-53.5 xl:-left-8"
           />
           <Dot
             delay={1.7}
-            className="top-39 right-1 size-2.5 lg:size-3.25 bg-[#FFEC5A] xl:-right-14"
+            className="top-39 right-1 size-2.5 bg-[#FFEC5A] lg:size-3.25 xl:-right-14"
           />
           <Dot
             delay={1.8}
-            className="-bottom-8.75 left-[51%] size-2.5 lg:size-3.25 translate-x-[-49%] bg-[#5AF9FF] lg:bottom-10 lg:block xl:bottom-8.25"
+            className="-bottom-8.75 left-[51%] size-2.5 translate-x-[-49%] bg-[#5AF9FF] lg:bottom-10 lg:block lg:size-3.25 xl:bottom-8.25"
           />
           <Dot
             delay={1.9}
-            className="-right-37.5 bottom-25.25 size-1.75 bg-[#0C3B7C]"
+            className="-right-37.5 bottom-25.25 hidden size-1.75 bg-[#0C3B7C] xl:block"
           />
           <Dot
             delay={2.0}
-            className="bottom-8.25 -left-34.25 size-1.75 bg-[#FFEC5A]"
+            className="bottom-8.25 -left-34.25 hidden size-1.75 bg-[#FFEC5A] xl:block"
           />
         </div>
       </div>
