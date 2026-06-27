@@ -13,6 +13,7 @@ export function ServiceSection() {
       <div>
         <div className="mx-auto grid max-w-7xl grid-cols-1 justify-items-center gap-6.25 px-5 sm:grid-cols-[auto_auto] sm:justify-center xl:grid-cols-[auto_auto_auto]">
           {services.map((service) => (
+            // Card: border fades out on hover, replaced by a soft shadow
             <div
               key={service.id}
               className="max-w-99.25 rounded-[13px] border border-[#FAC4D2] px-8.25 py-7.5 transition-all duration-300 hover:border-transparent hover:shadow-[0px_4px_90.3px_0px_#D7CDCF78]"
@@ -31,7 +32,7 @@ export function ServiceSection() {
               <p className="mt-3.5 max-w-76.5 text-sm leading-[130%] font-medium tracking-normal">
                 {service.description}
               </p>
-              <button className="border-primary text-primary mt-8.75 h-9.5 w-29.75 rounded-[44px] border text-sm leading-[130%] font-medium tracking-normal">
+              <button className="border-primary text-primary hover:bg-primary mt-8.75 h-9.5 w-29.75 rounded-[44px] border text-sm leading-[130%] font-medium tracking-normal transition-all duration-300 hover:text-white">
                 Read More
               </button>
             </div>

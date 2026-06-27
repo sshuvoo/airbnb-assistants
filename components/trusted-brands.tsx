@@ -32,6 +32,9 @@ const brandList = [
   },
 ]
 
+// Duplicate the list so the marquee has a seamless loop
+const duplicateList = [...brandList, ...brandList, ...brandList]
+
 export function TrustedBrands() {
   return (
     <section>
@@ -49,7 +52,7 @@ export function TrustedBrands() {
             pauseOnHover
           >
             <div className="flex items-center gap-x-15.25">
-              {[...brandList, ...brandList].map((brand, i) => (
+              {duplicateList.map((brand, i) => (
                 <Image
                   key={i}
                   src={brand.imageUrl}

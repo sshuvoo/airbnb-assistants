@@ -1,13 +1,14 @@
 'use client'
 
-import Link from 'next/link'
-import { ButtonPrimary } from './button-primary'
-import Image from 'next/image'
 import { cn } from '@/lib/utils'
 import { motion } from 'framer-motion'
-import { useState, useEffect } from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
+import { useEffect, useState } from 'react'
+import { ButtonPrimary } from './button-primary'
 
 export function HeroSection() {
+  // On first render, brand icons start clustered at center then fan out to their corners
   const [isAnimating, setIsAnimating] = useState(true)
 
   useEffect(() => {
@@ -19,7 +20,7 @@ export function HeroSection() {
 
   return (
     <section
-      id="hero"
+      id="home"
       className="hero-grid flex h-auto scroll-mt-20 flex-col items-center justify-end py-20 lg:h-146 lg:py-0"
     >
       <div className="container flex justify-center">
@@ -57,75 +58,78 @@ export function HeroSection() {
             <ButtonPrimary />
 
             <Link
-              href={'/#pricing'}
+              href={'#pricing'}
               className="mt-6.75 text-sm leading-[130%] font-medium tracking-normal underline"
             >
               See Pricing
             </Link>
           </div>
 
+          {/* While animating, stack all brands at center so layoutId can smoothly transition them out */}
           {isAnimating ? (
-            <div className="absolute bottom-2 z-20 hidden items-center justify-center gap-8 lg:flex">
-              <motion.div
-                className="size-10 overflow-hidden rounded-full"
-                layoutId="brand-1"
-                initial={{ rotate: 29.74 }}
-                animate={{ rotate: 29.74 }}
-              >
-                <Image
-                  className="scale-150"
-                  src={'./images/brands/brand-top-left.svg'}
-                  width={106.24}
-                  height={106.24}
-                  alt="airbnb"
-                  priority
-                />
-              </motion.div>
-              <motion.div
-                className="size-10 overflow-hidden rounded-full"
-                layoutId="brand-2"
-                initial={{ rotate: -27.61 }}
-                animate={{ rotate: -27.61 }}
-              >
-                <Image
-                  className="scale-150"
-                  src={'./images/brands/brand-top-right.svg'}
-                  width={65.69}
-                  height={65.69}
-                  alt="top-right"
-                  priority
-                />
-              </motion.div>
-              <motion.div
-                className="size-10 overflow-hidden rounded-full"
-                layoutId="brand-3"
-                initial={{ rotate: 23.23 }}
-                animate={{ rotate: 23.23 }}
-              >
-                <Image
-                  className="scale-150"
-                  src={'./images/brands/brand-bottom-left.svg'}
-                  width={75.89}
-                  height={75.89}
-                  alt="bottom-left"
-                  priority
-                />
-              </motion.div>
-              <motion.div
-                className="size-10 overflow-hidden rounded-full"
-                layoutId="brand-4"
-                initial={{ rotate: -33.8 }}
-                animate={{ rotate: -33.8 }}
-              >
-                <Image
-                  className="scale-160"
-                  src={'./images/brands/brand-bottom-right.svg'}
-                  width={89.11}
-                  height={89.11}
-                  alt="bottom-right"
-                  priority
-                />
-              </motion.div>
+            <div className="absolute bottom-4 z-20 hidden items-center justify-center gap-8 lg:flex">
+              <div className="relative size-10">
+                <motion.div
+                  className="absolute top-1/2 left-1/2 size-10 -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full border-2 border-white"
+                  layoutId="brand-1"
+                  initial={{ rotate: 29.74 }}
+                  animate={{ rotate: 29.74 }}
+                >
+                  <Image
+                    className="scale-150"
+                    src={'./images/brands/brand-top-left.svg'}
+                    width={106.24}
+                    height={106.24}
+                    alt="airbnb"
+                    priority
+                  />
+                </motion.div>
+                <motion.div
+                  className="absolute top-1/2 left-1/2 size-10 -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full border-2 border-white"
+                  layoutId="brand-2"
+                  initial={{ rotate: -27.61 }}
+                  animate={{ rotate: -27.61 }}
+                >
+                  <Image
+                    className="scale-150"
+                    src={'./images/brands/brand-top-right.svg'}
+                    width={65.69}
+                    height={65.69}
+                    alt="top-right"
+                    priority
+                  />
+                </motion.div>
+                <motion.div
+                  className="absolute top-1/2 left-1/2 size-10 -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full border-2 border-white"
+                  layoutId="brand-3"
+                  initial={{ rotate: 23.23 }}
+                  animate={{ rotate: 23.23 }}
+                >
+                  <Image
+                    className="scale-150"
+                    src={'./images/brands/brand-bottom-left.svg'}
+                    width={75.89}
+                    height={75.89}
+                    alt="bottom-left"
+                    priority
+                  />
+                </motion.div>
+                <motion.div
+                  className="absolute top-1/2 left-1/2 size-10 -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full border-2 border-white"
+                  layoutId="brand-4"
+                  initial={{ rotate: -33.8 }}
+                  animate={{ rotate: -33.8 }}
+                >
+                  <Image
+                    className="scale-160"
+                    src={'./images/brands/brand-bottom-right.svg'}
+                    width={89.11}
+                    height={89.11}
+                    alt="bottom-right"
+                    priority
+                  />
+                </motion.div>
+              </div>
             </div>
           ) : (
             <>
@@ -208,23 +212,23 @@ export function HeroSection() {
 
           <Dot
             delay={1.4}
-            className="top-10.75 left-[50%] size-3.75 translate-x-[-50%] bg-[#34E0A1] lg:block"
+            className="-top-10 left-[50%] size-2.5 lg:size-3.75 translate-x-[-50%] bg-[#34E0A1] lg:top-7 lg:block xl:top-10.75"
           />
           <Dot
             delay={1.5}
-            className="top-20.25 -left-37.25 size-3.25 bg-[#635BFF]"
+            className="top-10 left-4 size-2.5 lg:size-3.25 bg-[#635BFF] xl:top-20.25 xl:-left-37.25"
           />
           <Dot
             delay={1.6}
-            className="bottom-53.5 -left-8 size-3.25 bg-[#FF5A5F]"
+            className="bottom-25 left-2 size-2.5 lg:size-3.25 bg-[#FF5A5F] xl:bottom-53.5 xl:-left-8"
           />
           <Dot
             delay={1.7}
-            className="top-39 -right-14 size-3.25 bg-[#FFEC5A]"
+            className="top-39 right-1 size-2.5 lg:size-3.25 bg-[#FFEC5A] xl:-right-14"
           />
           <Dot
             delay={1.8}
-            className="bottom-8.25 left-[51%] size-3.25 translate-x-[-49%] bg-[#5AF9FF] lg:block"
+            className="-bottom-8.75 left-[51%] size-2.5 lg:size-3.25 translate-x-[-49%] bg-[#5AF9FF] lg:bottom-10 lg:block xl:bottom-8.25"
           />
           <Dot
             delay={1.9}
@@ -240,6 +244,7 @@ export function HeroSection() {
   )
 }
 
+// Little colored dots scattered around the hero for visual flair
 function Dot({ className, delay = 0 }: { className?: string; delay?: number }) {
   return (
     <motion.div
@@ -247,7 +252,7 @@ function Dot({ className, delay = 0 }: { className?: string; delay?: number }) {
       animate={{ scale: 1, opacity: 1 }}
       transition={{ duration: 0.5, delay, type: 'spring' }}
       className={cn(
-        'absolute hidden rounded-full opacity-100 shadow-[0px_-2px_6.3px_0px_#00000040_inset] xl:block',
+        'absolute rounded-full opacity-100 shadow-[0px_-2px_6.3px_0px_#00000040_inset]',
         className,
       )}
     />

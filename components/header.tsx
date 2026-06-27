@@ -16,15 +16,15 @@ import { useState } from 'react'
 import { ButtonPrimary } from './button-primary'
 
 const navLinks = [
-  { title: 'Home', href: '/', id: 'hero' },
-  { title: 'About', href: '/#about', id: 'about' },
-  { title: 'Services', href: '/#services', id: 'services' },
-  { title: 'Pricing', href: '/#pricing', id: 'pricing' },
-  { title: 'Blog', href: '/#blog', id: 'blog' },
-  { title: 'Resources', href: '/#resources', id: 'resources' },
+  { title: 'Home', href: '#home', id: 'home' },
+  { title: 'Services', href: '#services', id: 'services' },
+  { title: 'Pricing', href: '#pricing', id: 'pricing' },
+  { title: 'Tools', href: '#tools', id: 'tools' },
+  { title: 'Reviews', href: '#reviews', id: 'reviews' },
+  { title: 'Faq', href: '#faq', id: 'faq' },
 ]
 
-const sectionIds = navLinks.map((l) => l.id).concat(['tools'])
+const sectionIds = navLinks.map((l) => l.id)
 
 export function Header() {
   const sectionId = useActiveSection(sectionIds)
@@ -34,7 +34,7 @@ export function Header() {
     <>
       <header className="bg-background sticky top-0 z-9999 w-full shadow-[0px_4px_62px_0px_#FAC4D2A1]">
         <div className="bg-background container flex h-16 items-center justify-between sm:h-22.25">
-          <Link href={'/'}>
+          <Link href={'#home'}>
             <Image
               className="aspect-125/45 w-20 sm:w-31.25"
               src={'./images/logo/google.svg'}

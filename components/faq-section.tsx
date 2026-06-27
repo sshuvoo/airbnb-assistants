@@ -1,8 +1,5 @@
 'use client'
 
-import Image from 'next/image'
-import { motion } from 'framer-motion'
-import { SectionHeader } from './section-header'
 import {
   Accordion,
   AccordionContent,
@@ -10,10 +7,16 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion'
 import { faqData } from '@/data/faq-data'
+import { motion } from 'framer-motion'
+import Image from 'next/image'
+import { SectionHeader } from './section-header'
 
 export function FAQSection() {
   return (
-    <section className="space-y-4.75 py-8 sm:py-12 lg:py-19.25">
+    <section
+      id="faq"
+      className="scroll-mt-20 space-y-4.75 py-8 sm:py-12 lg:py-19.25"
+    >
       <div className="container">
         <div className="bg-card rounded-[16px] sm:pb-8 md:pb-12 lg:pb-18.75">
           <SectionHeader
@@ -38,6 +41,7 @@ export function FAQSection() {
                   value={item.id}
                   className="pb-8 not-first:pt-6 not-last:border-[#BF214A47]"
                 >
+                  {/* Swap between plus/minus icon based on accordion open state */}
                   <AccordionTrigger className="gap-x-4 py-0 text-[18px] leading-7 font-bold **:data-[slot=accordion-trigger-icon]:hidden">
                     {item.question}
                     <Image
@@ -66,10 +70,11 @@ export function FAQSection() {
       </div>
       <div className="container">
         <div className="bg-card space-y-8 rounded-[16px] px-4 py-8">
+          {/* Support avatars: center one pops in first, side avatars slide in after a delay */}
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true, amount: 1 }}
             className="relative mx-auto h-14 w-30"
           >
             <motion.div

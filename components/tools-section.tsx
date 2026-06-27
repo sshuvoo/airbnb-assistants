@@ -4,12 +4,13 @@ import { SectionHeader } from './section-header'
 
 export function ToolsSection() {
   return (
-    <section id="tools">
+    <section id="tools" className="scroll-mt-20">
       <SectionHeader
         className="pt-16 pb-16 sm:pb-24 lg:pt-21 lg:pb-34"
         title={{ plain: 'Our', accent: 'Tools' }}
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
       />
+      {/* Gray background band to visually separate this section */}
       <div className="bg-foreground pt-9.5 pb-16 lg:pb-21.25">
         <div className="container">
           <div className="xs:grid-cols-2 mx-auto grid max-w-5xl grid-cols-1 justify-center gap-6 md:grid-cols-3 lg:grid-cols-[auto_auto_auto] lg:gap-x-11.25 lg:gap-y-10">
